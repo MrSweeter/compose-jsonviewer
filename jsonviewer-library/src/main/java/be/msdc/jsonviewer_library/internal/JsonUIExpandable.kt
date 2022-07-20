@@ -31,7 +31,7 @@ internal fun JsonUIExpandable(
     rotation: Float,
     colorScheme: JsonColorScheme,
     onClick: () -> Unit,
-)   {
+) {
     Row(
         modifier = Modifier
             .clickable { onClick() }
@@ -40,20 +40,24 @@ internal fun JsonUIExpandable(
             .paddingJson(true),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        if (label == null)  {
+        if (label == null) {
             val icon = when {
                 element.isJsonArray -> Icons.Outlined.DataArray
                 element.isJsonObject -> Icons.Outlined.DataObject
                 else -> Icons.Outlined.AccountTree
             }
-            Icon(icon,
+            Icon(
+                icon,
                 modifier = Modifier.size(ICON_SIZE),
                 contentDescription = "json_element_root",
                 tint = colorScheme.rootIcon
             )
         }
-        Icon(Icons.Filled.ArrowDropDown,
-            modifier = Modifier.rotate(rotation).size(ICON_SIZE),
+        Icon(
+            Icons.Filled.ArrowDropDown,
+            modifier = Modifier
+                .rotate(rotation)
+                .size(ICON_SIZE),
             contentDescription = "json_element_expandable",
             tint = colorScheme.dropArrowIcon
         )
@@ -63,8 +67,12 @@ internal fun JsonUIExpandable(
 
 @Composable
 private fun JsonUIElementText(label: String?, element: JsonElement, colorScheme: JsonColorScheme) {
-    when  {
-        element.isJsonObject -> JsonObjectText(jsonObject = element.asJsonObject, label = label, colorScheme = colorScheme)
+    when {
+        element.isJsonObject -> JsonObjectText(
+            jsonObject = element.asJsonObject,
+            label = label,
+            colorScheme = colorScheme
+        )
         element.isJsonArray -> JsonArrayText(jsonArray = element.asJsonArray, label = label, colorScheme = colorScheme)
         else -> Text(text = "Invalid expandable item")
     }
@@ -81,9 +89,9 @@ private fun JsonArrayText(jsonArray: JsonArray, label: String?, colorScheme: Jso
 }
 
 @Composable
-private fun SpannableItem(type: String, count: String, colorScheme: JsonColorScheme)  {
+private fun SpannableItem(type: String, count: String, colorScheme: JsonColorScheme) {
     val annotatedString = buildAnnotatedString {
-        withStyle(style = SpanStyle(colorScheme.collectionLabelText))    {
+        withStyle(style = SpanStyle(colorScheme.collectionLabelText)) {
             append(type)
         }
         append(" ")

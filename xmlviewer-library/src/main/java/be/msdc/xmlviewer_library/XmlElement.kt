@@ -6,8 +6,8 @@ data class XmlElement(
     val attributes: Map<String, String>,
     val children: List<XmlElement>,
     var isRoot: Boolean = false
-)   {
-    class Builder   {
+) {
+    class Builder {
 
         private var innerText: MutableList<String> = mutableListOf()
         private var attributes: MutableMap<String, String> = mutableMapOf()

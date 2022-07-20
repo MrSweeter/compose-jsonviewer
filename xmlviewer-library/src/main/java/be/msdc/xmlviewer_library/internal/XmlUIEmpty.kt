@@ -22,14 +22,15 @@ import be.msdc.xmlviewer_library.XmlElement
 internal fun XmlUIEmpty(
     element: XmlElement,
     colorScheme: XmlColorScheme,
-)   {
+) {
     Row(
         modifier = Modifier
             .height(ROW_HEIGHT)
             .paddingXml(true),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(Icons.Outlined.CropSquare,
+        Icon(
+            Icons.Outlined.CropSquare,
             modifier = Modifier.size(ICON_SIZE),
             contentDescription = "xml_element_empty",
             tint = colorScheme.collapseIcon
@@ -40,13 +41,17 @@ internal fun XmlUIEmpty(
 
 @Composable
 private fun XmlUIElementText(element: XmlElement, colorScheme: XmlColorScheme) {
-    return SpannableItem(label = element.name, innerText = element.innerText.joinToString(" "), colorScheme = colorScheme)
+    return SpannableItem(
+        label = element.name,
+        innerText = element.innerText.joinToString(" "),
+        colorScheme = colorScheme
+    )
 }
 
 @Composable
-private fun SpannableItem(label: String, innerText: String, colorScheme: XmlColorScheme)  {
+private fun SpannableItem(label: String, innerText: String, colorScheme: XmlColorScheme) {
     val annotatedString = buildAnnotatedString {
-        withStyle(style = SpanStyle(color = colorScheme.nodeNameText, fontWeight = FontWeight.ExtraBold))    {
+        withStyle(style = SpanStyle(color = colorScheme.nodeNameText, fontWeight = FontWeight.ExtraBold)) {
             append(label)
         }
         append(" ")

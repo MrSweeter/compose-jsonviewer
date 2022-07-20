@@ -17,7 +17,7 @@ internal fun JsonUICollection(
     label: String?,
     colorScheme: JsonColorScheme,
     content: LazyListScope.() -> Unit
-)   {
+) {
     var expanded by remember { mutableStateOf(false) }
     val rotation by animateFloatAsState(targetValue = if (expanded) 0f else -90f)
 

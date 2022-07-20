@@ -27,7 +27,7 @@ private fun JsonElement.countElement(): Int {
 }
 
 @Stable
-fun Modifier.paddingJson(withIcon: Boolean) = this.then(
+internal fun Modifier.paddingJson(withIcon: Boolean) = this.then(
     padding(
         start = TAB_SIZE - (if (withIcon) ICON_SIZE else 0.dp),
         end = 8.dp,

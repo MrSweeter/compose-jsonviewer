@@ -18,10 +18,10 @@ fun JsonUIRoot(
     colorScheme: JsonColorScheme = defaultColorScheme()
 ) {
     element?.let {
-        Box(modifier = modifier.background(colorScheme.background))    {
+        Box(modifier = modifier.background(colorScheme.background)) {
             JsonUIElement(label = null, element = element, colorScheme = colorScheme)
         }
-    } ?: Box(modifier = modifier.background(colorScheme.background))    {
+    } ?: Box(modifier = modifier.background(colorScheme.background)) {
         Text(text = "Invalid JSON")
     }
 }

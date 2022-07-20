@@ -15,7 +15,7 @@ object XmlParser {
                 return builder.parse(inputStream)?.let { mapNode(it).apply { isRoot = true } }
             }
         } catch (e: Exception) {
-            Log.println(Log.ASSERT, "LOGME", "XML parsing error: " + e.message)
+            Log.e("XmlParser", "Error parsing XML", e)
         }
         return null
     }
@@ -23,17 +23,17 @@ object XmlParser {
     private fun mapNode(node: Node): XmlElement {
         val builder = XmlElement.Builder()
 
-        if (node.hasAttributes())   {
+        if (node.hasAttributes()) {
             for (i in 0 until node.attributes.length) {
                 val attr = node.attributes.item(i)
                 builder.addAttribute(attr.nodeName, attr.nodeValue)
             }
         }
 
-        if (node.hasChildNodes())   {
+        if (node.hasChildNodes()) {
             for (i in 0 until node.childNodes.length) {
                 val child = node.childNodes.item(i)
-                if (child.nodeType == Node.TEXT_NODE)   {
+                if (child.nodeType == Node.TEXT_NODE) {
                     builder.addInnerText(child.textContent.trim())
                 } else {
                     builder.addChild(mapNode(child))

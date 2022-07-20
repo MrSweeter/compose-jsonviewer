@@ -19,7 +19,7 @@ internal fun JsonUINull(label: String?, colorScheme: JsonColorScheme) {
 
 @Composable
 internal fun JsonUIPrimitive(primitive: JsonPrimitive, label: String?, colorScheme: JsonColorScheme) {
-    val color = when    {
+    val color = when {
         primitive.isBoolean && primitive.asBoolean -> colorScheme.primitiveBooleanTrueText
         primitive.isBoolean && !primitive.asBoolean -> colorScheme.primitiveBooleanFalseText
         primitive.isNumber -> colorScheme.primitiveNumberText

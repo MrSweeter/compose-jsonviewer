@@ -15,7 +15,7 @@ import be.msdc.xmlviewer_library.XmlElement
 internal fun XmlUICollection(
     element: XmlElement,
     colorScheme: XmlColorScheme,
-)   {
+) {
     var expanded by remember { mutableStateOf(false) }
     val rotation by animateFloatAsState(targetValue = if (expanded) 0f else -90f)
 
@@ -30,7 +30,7 @@ internal fun XmlUICollection(
             visible = expanded,
             modifier = Modifier.padding(start = TAB_SIZE)
         ) {
-            LazyColumn(modifier = Modifier.xmlHeight(element))   {
+            LazyColumn(modifier = Modifier.xmlHeight(element)) {
                 element.attributes.forEach {
                     attributeItem(it.key, it.value, colorScheme)
                 }

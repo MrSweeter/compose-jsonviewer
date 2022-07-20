@@ -6,7 +6,7 @@ import be.msdc.xmlviewer_library.XmlElement
 
 @Composable
 internal fun XmlUIElement(element: XmlElement, colorScheme: XmlColorScheme) {
-    when    {
+    when {
         element.children.isNotEmpty() || element.attributes.isNotEmpty() -> XmlUICollection(
             element = element,
             colorScheme = colorScheme,

@@ -6,7 +6,7 @@ import com.google.gson.JsonElement
 
 @Composable
 internal fun JsonUIElement(label: String?, element: JsonElement, colorScheme: JsonColorScheme) {
-    when    {
+    when {
         element.isJsonObject -> JsonUIObject(
             jsonObject = element.asJsonObject,
             label = label,

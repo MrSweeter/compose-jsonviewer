@@ -11,15 +11,18 @@ internal fun JsonUIObject(
     jsonObject: JsonObject,
     label: String?,
     colorScheme: JsonColorScheme
-)   {
-    JsonUICollection(element = jsonObject, label = label, colorScheme = colorScheme)   {
+) {
+    JsonUICollection(element = jsonObject, label = label, colorScheme = colorScheme) {
         jsonObject.entrySet().forEach {
             objectItem(it, colorScheme)
         }
     }
 }
 
-private fun LazyListScope.objectItem(entry: MutableMap.MutableEntry<String, JsonElement>, colorScheme: JsonColorScheme) {
+private fun LazyListScope.objectItem(
+    entry: MutableMap.MutableEntry<String, JsonElement>,
+    colorScheme: JsonColorScheme
+) {
     item {
         JsonUIElement(
             label = entry.key,

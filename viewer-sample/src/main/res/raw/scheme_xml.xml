@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tag
+    attributeColor="#000000"
+    attributeFalse="false"
+    attributeNull="null"
+    attributeNumber="8"
+    attributeString="attributeValue"
+    attributeTrue="true">
+    This is a text
+    <inner attributeString="attributeValue" />
+</tag>

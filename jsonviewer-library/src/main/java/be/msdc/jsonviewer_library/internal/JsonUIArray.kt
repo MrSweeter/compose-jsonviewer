@@ -11,7 +11,7 @@ internal fun JsonUIArray(
     jsonArray: JsonArray,
     label: String?,
     colorScheme: JsonColorScheme
-)   {
+) {
     JsonUICollection(element = jsonArray, label = label, colorScheme = colorScheme) {
         jsonArray.forEachIndexed { index, jsonElement ->
             arrayItem(index, jsonElement, colorScheme)

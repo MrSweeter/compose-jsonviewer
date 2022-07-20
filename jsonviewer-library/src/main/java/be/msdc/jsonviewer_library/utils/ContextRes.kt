@@ -8,5 +8,9 @@ import com.google.gson.JsonParser
 
 fun Context.readJsonResource(@RawRes resId: Int): JsonElement? {
     val rawJson = resources.openRawResource(resId).bufferedReader().use { it.readText() }
-    return try { JsonParser.parseString(rawJson) } catch (ex: JsonParseException) { null }
+    return try {
+        JsonParser.parseString(rawJson)
+    } catch (ex: JsonParseException) {
+        null
+    }
 }

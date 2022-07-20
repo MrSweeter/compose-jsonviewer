@@ -1,0 +1,7 @@
+{
+  "b_true": true,
+  "b_false": false,
+  "number": 1234,
+  "string": "string",
+  "null": null
+}

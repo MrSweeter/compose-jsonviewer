@@ -29,7 +29,7 @@ internal fun XmlUIExpandable(
     rotation: Float,
     colorScheme: XmlColorScheme,
     onClick: () -> Unit,
-)   {
+) {
     Row(
         modifier = Modifier
             .clickable { onClick() }
@@ -38,14 +38,16 @@ internal fun XmlUIExpandable(
             .paddingXml(true),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        if (element.isRoot)  {
-            Icon(Icons.Outlined.Code,
+        if (element.isRoot) {
+            Icon(
+                Icons.Outlined.Code,
                 modifier = Modifier.size(ICON_SIZE),
                 contentDescription = "xml_element_root",
                 tint = colorScheme.rootIcon
             )
         }
-        Icon(if (rotation.toInt() > -45) Icons.Outlined.IndeterminateCheckBox else Icons.Outlined.AddBox,
+        Icon(
+            if (rotation.toInt() > -45) Icons.Outlined.IndeterminateCheckBox else Icons.Outlined.AddBox,
             modifier = Modifier
                 .rotate(rotation)
                 .size(ICON_SIZE),
@@ -58,13 +60,17 @@ internal fun XmlUIExpandable(
 
 @Composable
 private fun XmlUIElementText(element: XmlElement, colorScheme: XmlColorScheme) {
-    return SpannableItem(label = element.name, innerText = element.innerText.joinToString(" "), colorScheme = colorScheme)
+    return SpannableItem(
+        label = element.name,
+        innerText = element.innerText.joinToString(" "),
+        colorScheme = colorScheme
+    )
 }
 
 @Composable
-private fun SpannableItem(label: String, innerText: String, colorScheme: XmlColorScheme)  {
+private fun SpannableItem(label: String, innerText: String, colorScheme: XmlColorScheme) {
     val annotatedString = buildAnnotatedString {
-        withStyle(style = SpanStyle(color = colorScheme.nodeNameText, fontWeight = FontWeight.ExtraBold))    {
+        withStyle(style = SpanStyle(color = colorScheme.nodeNameText, fontWeight = FontWeight.ExtraBold)) {
             append(label)
         }
         append(" ")
