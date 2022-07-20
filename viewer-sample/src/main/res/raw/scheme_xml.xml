@@ -2,6 +2,7 @@
 <tag
     attributeColor="#000000"
     attributeFalse="false"
+    attributeTrue="true"
     attributeNull="null"
     attributeNumber="8"
     attributeString="attributeValue"
@@ -16,8 +17,7 @@
     hexaX8="0x800000ff"
     rgb="rgb(255, 0, 0)"
     rgba="rgba(0, 255, 0, 1.0)"
-    rgbaFloat="rgba(0, 0, 255, .5)"
-    attributeTrue="true">
+    rgbaFloat="rgba(0, 0, 255, .5)">
     This is a text
     <inner attributeString="attributeValue" />
 </tag>

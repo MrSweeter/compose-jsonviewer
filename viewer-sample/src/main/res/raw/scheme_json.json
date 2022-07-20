@@ -14,5 +14,11 @@
   "0x[0-9a-f]{8}": "0x800000ff",
   "rgb": "rgb(255, 0, 0)",
   "rgba": "rgba(0, 255, 0, 1.0)",
-  "rgbaFloat": "rgba(0, 0, 255, .5)"
+  "rgbaFloat": "rgba(0, 0, 255, .5)",
+  "inner": [
+    {
+      "attributeString": "attribute"
+    },
+    "attributeValue"
+  ]
 }
