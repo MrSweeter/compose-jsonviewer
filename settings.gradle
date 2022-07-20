@@ -12,6 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "JsonViewer"
-include ':jsonviewer-sample'
+rootProject.name = "TextFormatViewer"
+include ':viewer-sample'
 include ':jsonviewer-library'
+include ':xmlviewer-library'

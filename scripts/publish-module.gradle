@@ -44,8 +44,8 @@ afterEvaluate {
                 // Mostly self-explanatory metadata
                 pom {
                     name = PUBLISH_ARTIFACT_ID
-                    description = 'Compose JsonViewer library for Android'
-                    url = 'https://github.com/MrSweeter/compose-jsonviewer'
+                    description = 'Compose TextFormat Viewer library for Android'
+                    url = 'https://github.com/MrSweeter/compose-textformat-viewer'
                     licenses {
                         license {
                             name = 'Apache License, Version 2.0'
@@ -63,9 +63,9 @@ afterEvaluate {
                     // Version control info - if you're using GitHub, follow the
                     // format as seen here
                     scm {
-                        connection = 'scm:git:github.com/MrSweeter/compose-jsonviewer.git'
-                        developerConnection = 'scm:git:ssh://github.com/compose-jsonviewer/hypco.git'
-                        url = 'https://github.com/MrSweeter/compose-jsonviewer/tree/develop'
+                        connection = 'scm:git:github.com/MrSweeter/compose-textformat-viewer.git'
+                        developerConnection = 'scm:git:ssh://github.com/compose-textformat-viewer/hypco.git'
+                        url = 'https://github.com/MrSweeter/compose-textformat-viewer/tree/develop'
                     }
                 }
             }

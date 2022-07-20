@@ -1,1 +1,1 @@
-# compose-jsonviewer
+# compose-textformat-viewer

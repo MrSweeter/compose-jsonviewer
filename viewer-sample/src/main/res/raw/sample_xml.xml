@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="FRA"
+    xml:space="default"
+    xmlns="http://www.w3.org/ns/ttml"
+    xmlns:tts="http://www.w3.org/ns/ttml#styling">
+	This is a random text.
+	<head>
+		<styling>
+			<style tts:backgroundColor="transparent" tts:color="white" tts:fontFamily="proportionalSansSerif" tts:fontSize="70%" tts:fontStyle="normal" tts:lineHeight="90%" tts:textAlign="center" tts:wrapOption="noWrap" xml:id="s0"  />
+			<style tts:backgroundColor="#000000" tts:color="#00FF00" xml:id="s1"  />
+			<style tts:backgroundColor="#000000" tts:color="#ff0000" xml:id="s2"  />
+		</styling>
+		<layout>
+			<region style="s0" tts:displayAlign="center" tts:extent="70% 20%" tts:origin="10% 80%" xml:id="pop1"  />
+		</layout>
+	</head>
+	This is an other random text.
+	<body style="s0">
+		<div>
+			<p xml:id="empty-id" begin="000440:20:45.479" end="000440:20:45.489"></p>
+			<a />
+		</div>
+	</body>
+</tt>
