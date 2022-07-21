@@ -1,0 +1,16 @@
+{
+  "bool_true": true,
+  "bool_false": false,
+  "number": 1234,
+  "string": "string",
+  "null": null,
+  "colorHex": "#ff0000",
+  "colorRgb": "rgb(255, 0, 0)",
+  "colorRgba": "rgba(255, 255, 0, .5)",
+  "array": [
+    {
+      "attributeString": "attribute"
+    },
+    "attributeValue"
+  ]
+}

@@ -126,6 +126,12 @@ fun MainContent() {
 
         Column(modifier = Modifier.verticalScroll(rememberScrollState(), true)) {
 
+            /*Text(text = selectedText.capitalize(),
+                fontWeight = FontWeight.Bold,
+                fontSize = 16.sp,
+                modifier = Modifier.padding(top = 16.dp).fillMaxWidth().background(Color(0xffdba41e),
+            ).padding(16.dp))*/
+
             JsonUIRoot(if (large) jsonLarge else json, colorScheme = selectedJsonScheme)
             XmlUIRoot(if (large) xmlLarge else xml, colorScheme = selectedXmlScheme)
 

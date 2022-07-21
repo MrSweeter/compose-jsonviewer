@@ -109,7 +109,6 @@ object XmlParser {
         node as Element
         return XmlElement.Builder()
             .withName(node.nodeName)
-            .addInnerText(node.textContent.trim())
     }
 
     private fun visitEntity(node: Node): XmlElement.Builder {

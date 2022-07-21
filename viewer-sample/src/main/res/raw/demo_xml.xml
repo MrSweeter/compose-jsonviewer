@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root attribute="RootAttribute">
+    <bool bool_true="true" bool_false="false" />
+    <number>1234</number>
+    <null/>
+    <colorHex>#ff0000</colorHex>
+    <color hex="#ff0000" rgb="rgb(255, 0, 0)" rgba="rgba(255, 255, 0, .5)" />
+    <array>
+        <attributeString>attribute</attributeString>
+        <attributeString>attribute</attributeString>
+    </array>
+</root>
