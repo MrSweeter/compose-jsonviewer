@@ -1,4 +1,5 @@
 # Text-Format Viewer
+<img src="./viewer-sample/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
 <img src="https://img.shields.io/github/license/mrsweeter/compose-textformat-viewer" />
 
 ### JSON
