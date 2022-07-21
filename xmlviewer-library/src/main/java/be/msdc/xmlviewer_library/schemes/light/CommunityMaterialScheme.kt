@@ -9,6 +9,8 @@ fun LightScheme.communityMaterial(
     collapseIcon: Color = Color(0xff2f86d2),
     nodeNameText: Color = Color(0xffff5370),
     nodeInnerText: Color = Color(0xff90a4ae),
+    nodeMetadataKeyText: Color = Color(0xff7c4dff),
+    nodeMetadataValueText: Color = Color(0xff91b859),
     nodeAttributeKeyText: Color = Color(0xff7c4dff),
     nodeAttributeValueText: Color = Color(0xff91b859),
 ) = XmlColorScheme(
@@ -17,6 +19,8 @@ fun LightScheme.communityMaterial(
     collapseIcon = collapseIcon,
     nodeNameText = nodeNameText,
     nodeInnerText = nodeInnerText,
+    nodeMetadataKeyText = nodeMetadataKeyText,
+    nodeMetadataValueText = nodeMetadataValueText,
     nodeAttributeKeyText = nodeAttributeKeyText,
     nodeAttributeValueText = nodeAttributeValueText,
 )

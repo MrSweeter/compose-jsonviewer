@@ -9,6 +9,8 @@ fun DarkScheme.futuristt(
     collapseIcon: Color = Color(0xff555555),
     nodeNameText: Color = Color(0xffeb0869),
     nodeInnerText: Color = Color(0xffffffff),
+    nodeMetadataKeyText: Color = Color(0xfff3f359),
+    nodeMetadataValueText: Color = Color(0xff32d698),
     nodeAttributeKeyText: Color = Color(0xfff3f359),
     nodeAttributeValueText: Color = Color(0xff32d698),
 ) = XmlColorScheme(
@@ -17,6 +19,8 @@ fun DarkScheme.futuristt(
     collapseIcon = collapseIcon,
     nodeNameText = nodeNameText,
     nodeInnerText = nodeInnerText,
+    nodeMetadataKeyText = nodeMetadataKeyText,
+    nodeMetadataValueText = nodeMetadataValueText,
     nodeAttributeKeyText = nodeAttributeKeyText,
     nodeAttributeValueText = nodeAttributeValueText,
 )

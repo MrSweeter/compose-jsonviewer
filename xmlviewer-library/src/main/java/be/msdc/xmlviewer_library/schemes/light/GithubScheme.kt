@@ -9,6 +9,8 @@ fun LightScheme.github(
     collapseIcon: Color = Color(0xffbabbbc),
     nodeNameText: Color = Color(0xff22863a),
     nodeInnerText: Color = Color(0xff000000),
+    nodeMetadataKeyText: Color = Color(0xff6f42c1),
+    nodeMetadataValueText: Color = Color(0xff032f62),
     nodeAttributeKeyText: Color = Color(0xff6f42c1),
     nodeAttributeValueText: Color = Color(0xff032f62),
 ) = XmlColorScheme(
@@ -17,6 +19,8 @@ fun LightScheme.github(
     collapseIcon = collapseIcon,
     nodeNameText = nodeNameText,
     nodeInnerText = nodeInnerText,
+    nodeMetadataKeyText = nodeMetadataKeyText,
+    nodeMetadataValueText = nodeMetadataValueText,
     nodeAttributeKeyText = nodeAttributeKeyText,
     nodeAttributeValueText = nodeAttributeValueText,
 )

@@ -31,6 +31,9 @@ internal fun XmlUICollection(
             modifier = Modifier.padding(start = TAB_SIZE)
         ) {
             LazyColumn(modifier = Modifier.xmlHeight(element)) {
+                element.metadata.forEach {
+                    metadataItem(it.key, it.value, colorScheme)
+                }
                 element.attributes.forEach {
                     attributeItem(it.key, it.value, colorScheme)
                 }
@@ -39,6 +42,16 @@ internal fun XmlUICollection(
                 }
             }
         }
+    }
+}
+
+private fun LazyListScope.metadataItem(key: String, value: String, colorScheme: XmlColorScheme) {
+    item {
+        XmlUIMetadata(
+            key = key,
+            value = value,
+            colorScheme = colorScheme
+        )
     }
 }
 

@@ -9,6 +9,8 @@ fun DarkScheme.dracula(
     collapseIcon: Color = Color(0xff6272a4),
     nodeNameText: Color = Color(0xffff79c6),
     nodeInnerText: Color = Color(0xfff8f8f2),
+    nodeMetadataKeyText: Color = Color(0xff50fa7b),
+    nodeMetadataValueText: Color = Color(0xfff1fa8c),
     nodeAttributeKeyText: Color = Color(0xff50fa7b),
     nodeAttributeValueText: Color = Color(0xfff1fa8c),
 ) = XmlColorScheme(
@@ -17,6 +19,8 @@ fun DarkScheme.dracula(
     collapseIcon = collapseIcon,
     nodeNameText = nodeNameText,
     nodeInnerText = nodeInnerText,
+    nodeMetadataKeyText = nodeMetadataKeyText,
+    nodeMetadataValueText = nodeMetadataValueText,
     nodeAttributeKeyText = nodeAttributeKeyText,
     nodeAttributeValueText = nodeAttributeValueText,
 )

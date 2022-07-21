@@ -9,6 +9,8 @@ fun DarkScheme.github(
     collapseIcon: Color = Color(0xff444d56),
     nodeNameText: Color = Color(0xff85e89d),
     nodeInnerText: Color = Color(0xffe1e4e8),
+    nodeMetadataKeyText: Color = Color(0xffb392f0),
+    nodeMetadataValueText: Color = Color(0xff9ecbff),
     nodeAttributeKeyText: Color = Color(0xffb392f0),
     nodeAttributeValueText: Color = Color(0xff9ecbff),
 ) = XmlColorScheme(
@@ -17,6 +19,8 @@ fun DarkScheme.github(
     collapseIcon = collapseIcon,
     nodeNameText = nodeNameText,
     nodeInnerText = nodeInnerText,
+    nodeMetadataKeyText = nodeMetadataKeyText,
+    nodeMetadataValueText = nodeMetadataValueText,
     nodeAttributeKeyText = nodeAttributeKeyText,
     nodeAttributeValueText = nodeAttributeValueText,
 )

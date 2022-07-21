@@ -17,17 +17,18 @@ import androidx.compose.ui.graphics.Color
 fun parseColor(color: String): Color? {
 
     val colorString = color.trim('\"').trim()
-    val regex = Regex(pattern = "" +
-            "(#[0-9a-f]{3})" +
-            "|(#[0-9a-f]{4})" +
-            "|(#[0-9a-f]{6})" +
-            "|(#[0-9a-f]{8})" +
-            "|(0x[0-9a-f]{3})" +
-            "|(0x[0-9a-f]{4})" +
-            "|(0x[0-9a-f]{6})" +
-            "|(0x[0-9a-f]{8})" +
-            "|(rgb\\(\\d{1,3},\\s?\\d{1,3},\\s?\\d{1,3}\\))" +
-            "|(rgba\\(\\d{1,3},\\s?\\d{1,3},\\s?\\d{1,3},\\s?[0,1]?\\.?[0-9]\\))"
+    val regex = Regex(
+        pattern = "" +
+                "(#[0-9a-f]{3})" +
+                "|(#[0-9a-f]{4})" +
+                "|(#[0-9a-f]{6})" +
+                "|(#[0-9a-f]{8})" +
+                "|(0x[0-9a-f]{3})" +
+                "|(0x[0-9a-f]{4})" +
+                "|(0x[0-9a-f]{6})" +
+                "|(0x[0-9a-f]{8})" +
+                "|(rgb\\(\\d{1,3},\\s?\\d{1,3},\\s?\\d{1,3}\\))" +
+                "|(rgba\\(\\d{1,3},\\s?\\d{1,3},\\s?\\d{1,3},\\s?[0,1]?\\.?[0-9]\\))"
     )
 
     regex.matchEntire(colorString)?.let { matchResult ->

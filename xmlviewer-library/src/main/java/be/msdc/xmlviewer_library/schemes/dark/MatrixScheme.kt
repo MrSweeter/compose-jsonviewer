@@ -9,6 +9,8 @@ fun DarkScheme.matrix(
     collapseIcon: Color = Color(0xff006600),
     nodeNameText: Color = Color(0xff88ff88),
     nodeInnerText: Color = Color(0xff00cc00),
+    nodeMetadataKeyText: Color = Color(0xff00cc00),
+    nodeMetadataValueText: Color = Color(0xff88ff88),
     nodeAttributeKeyText: Color = Color(0xff00cc00),
     nodeAttributeValueText: Color = Color(0xff88ff88),
 ) = XmlColorScheme(
@@ -17,6 +19,8 @@ fun DarkScheme.matrix(
     collapseIcon = collapseIcon,
     nodeNameText = nodeNameText,
     nodeInnerText = nodeInnerText,
+    nodeMetadataKeyText = nodeMetadataKeyText,
+    nodeMetadataValueText = nodeMetadataValueText,
     nodeAttributeKeyText = nodeAttributeKeyText,
     nodeAttributeValueText = nodeAttributeValueText,
 )

@@ -9,6 +9,8 @@ fun DarkScheme.communityMaterial(
     collapseIcon: Color = Color(0xff858585),
     nodeNameText: Color = Color(0xff569cd6),
     nodeInnerText: Color = Color(0xffd4d4d4),
+    nodeMetadataKeyText: Color = Color(0xff9cdcfe),
+    nodeMetadataValueText: Color = Color(0xffce9178),
     nodeAttributeKeyText: Color = Color(0xff9cdcfe),
     nodeAttributeValueText: Color = Color(0xffce9178),
 ) = XmlColorScheme(
@@ -17,6 +19,8 @@ fun DarkScheme.communityMaterial(
     collapseIcon = collapseIcon,
     nodeNameText = nodeNameText,
     nodeInnerText = nodeInnerText,
+    nodeMetadataKeyText = nodeMetadataKeyText,
+    nodeMetadataValueText = nodeMetadataValueText,
     nodeAttributeKeyText = nodeAttributeKeyText,
     nodeAttributeValueText = nodeAttributeValueText,
 )

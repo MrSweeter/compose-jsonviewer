@@ -5,10 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -16,6 +13,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.layout.onGloballyPositioned
@@ -53,6 +51,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainContent() {
 
@@ -70,8 +69,11 @@ fun MainContent() {
     )
 
     val json = LocalContext.current.readJsonResource(R.raw.scheme_json)
+    val jsonLarge = LocalContext.current.readJsonResource(R.raw.sample_json)
     val xml = LocalContext.current.readXmlResource(R.raw.scheme_xml)
+    val xmlLarge = LocalContext.current.readXmlResource(R.raw.sample_xml)
 
+    var large by remember { mutableStateOf(false) }
     var expanded by remember { mutableStateOf(false) }
     var selectedText by remember { mutableStateOf("default") }
     var selectedJsonScheme by remember { mutableStateOf(JsonDefaultScheme()) }
@@ -81,46 +83,51 @@ fun MainContent() {
     val icon = if (expanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.KeyboardArrowDown
 
     Column {
-        Column(
+        Row(
             modifier = Modifier
                 .background(MaterialTheme.colorScheme.primaryContainer)
                 .padding(horizontal = 16.dp)
-                .padding(bottom = 16.dp)
+                .padding(bottom = 16.dp),
+            verticalAlignment = CenterVertically
         ) {
-            OutlinedTextField(
-                value = selectedText,
-                onValueChange = { selectedText = it },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .onGloballyPositioned { coordinates ->
-                        textFieldSize = coordinates.size.toSize()
-                    },
-                label = { Text("Scheme") },
-                trailingIcon = {
-                    Icon(icon, selectedText, Modifier.clickable { expanded = !expanded })
-                }
-            )
+            Column(modifier = Modifier.padding(end = 16.dp)) {
+                OutlinedTextField(
+                    value = selectedText,
+                    onValueChange = { selectedText = it },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .onGloballyPositioned { coordinates ->
+                            textFieldSize = coordinates.size.toSize()
+                        },
+                    label = { Text("Scheme") },
+                    trailingIcon = {
+                        Icon(icon, selectedText, Modifier.clickable { expanded = !expanded })
+                    }
+                )
 
-            DropdownMenu(
-                expanded = expanded,
-                onDismissRequest = { expanded = false },
-                modifier = Modifier.width(with(LocalDensity.current) { textFieldSize.width.toDp() })
-            ) {
-                schemes.forEach { (name, jsonScheme, xmlScheme) ->
-                    DropdownMenuItem(text = { Text(text = name) }, onClick = {
-                        selectedJsonScheme = jsonScheme
-                        selectedXmlScheme = xmlScheme
-                        selectedText = name
-                        expanded = false
-                    })
+                DropdownMenu(
+                    expanded = expanded,
+                    onDismissRequest = { expanded = false },
+                    modifier = Modifier.width(with(LocalDensity.current) { textFieldSize.width.toDp() })
+                ) {
+                    schemes.forEach { (name, jsonScheme, xmlScheme) ->
+                        DropdownMenuItem(text = { Text(text = name) }, onClick = {
+                            selectedJsonScheme = jsonScheme
+                            selectedXmlScheme = xmlScheme
+                            selectedText = name
+                            expanded = false
+                        })
+                    }
                 }
             }
+
+            Checkbox(checked = large, onCheckedChange = { large = it })
         }
 
         Column(modifier = Modifier.verticalScroll(rememberScrollState(), true)) {
 
-            JsonUIRoot(json, colorScheme = selectedJsonScheme)
-            XmlUIRoot(xml, colorScheme = selectedXmlScheme)
+            JsonUIRoot(if (large) jsonLarge else json, colorScheme = selectedJsonScheme)
+            XmlUIRoot(if (large) xmlLarge else xml, colorScheme = selectedXmlScheme)
 
             /*
             JsonUIRoot(json, colorScheme = JsonDefaultScheme())
